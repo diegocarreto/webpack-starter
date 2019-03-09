@@ -21,31 +21,31 @@
 
 /****************** Herencia ****************** */
 
-class Engine {
+// class Engine {
 
-    constructor() {
+//     constructor() {
 
-        this.type = 'Hibrid';
-    }
-    start() {
+//         this.type = 'Hibrid';
+//     }
+//     start() {
 
-        return `Starting: ${this.type}`
-    }
-}
+//         return `Starting: ${this.type}`
+//     }
+// }
 
-class Car extends Engine {
+// class Car extends Engine {
 
-    constructor() {
+//     constructor() {
 
-        super();
-    }
+//         super();
+//     }
 
-    start() {
+//     start() {
 
-        return super.start(); // `Car to start ${this.type}`
-    }
-}
+//         return super.start(); // `Car to start ${this.type}`
+//     }
+// }
 
-let car = new Car();
+// let car = new Car();
 
-console.log(car.start());
+// console.log(car.start());
