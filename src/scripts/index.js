@@ -1,51 +1,25 @@
-//ECMA ES6
+let promise = new Promise((resolve, reject) => {
 
-// class Person {
+    // let person = newerson;
 
-//     constructor(id, name) {
+    setTimeout(function () {
 
-//         this.id = id;
-//         this.name = name;
-//     };
+        try {
 
-//     getName(suffix){
+            // let person = newerson;
 
-//         return `${suffix} ${this.name}`;
-//     }
-// };
+            resolve('Todo OK');
 
-// let person = new Person(1, 'diego');
+        } catch (error) {
 
-// console.log(person);
-// console.log(person.getName('Hola'));
+            reject('Error');
+        }
 
-/****************** Herencia ****************** */
+    }, 2 * 1000);
+});
 
-// class Engine {
+console.log(promise);
 
-//     constructor() {
-
-//         this.type = 'Hibrid';
-//     }
-//     start() {
-
-//         return `Starting: ${this.type}`
-//     }
-// }
-
-// class Car extends Engine {
-
-//     constructor() {
-
-//         super();
-//     }
-
-//     start() {
-
-//         return super.start(); // `Car to start ${this.type}`
-//     }
-// }
-
-// let car = new Car();
-
-// console.log(car.start());
+promise.then(success => console.log('OK: ' + success),
+             error => console.log('ERROR: ' + error))
+       .catch(exception => console.log('Exception: ' + exception));
