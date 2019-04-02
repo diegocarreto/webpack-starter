@@ -1,0 +1,27 @@
+{
+  "name": "10_node_express_sql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set DEBUG=* & nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "mssql": "^5.0.5",
+    "nodemon": "^1.18.10"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "node_modules/*"
+    ],
+    "delay": "1000"
+  }
+}

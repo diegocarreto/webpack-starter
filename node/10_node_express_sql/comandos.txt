@@ -1,0 +1,42 @@
+crear aplicacion 
+
+    npm init 
+    npm init --y  (sin preguntas)
+
+instalar express
+    npm install express
+
+instalar chalk - colores en la consola
+
+    npm install --save chalk
+
+instalar morgan - debug
+
+    npm i morgan
+
+instalar debug
+
+    npm i debug
+
+correr node
+    node app.js <== Archivo js a ejecutar
+
+correr node con DEBUG 
+
+    set DEBUG=* & app.js
+
+correr con nodemon
+
+    set DEBUG=* nodemon app.js
+
+instalar a sql server
+
+   npm i mssql
+
+ip docker
+
+    http://192.168.99.100
+
+ver log de una imagen 
+    
+    docker logs 4ca52aba2404
