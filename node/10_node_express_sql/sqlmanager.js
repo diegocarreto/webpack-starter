@@ -1,10 +1,10 @@
 const sql = require('mssql');
 
 const config = {
-    user: 'sa',
-    password: '123456',
-    server: '127.0.0.1',
-    database: 'pal',
+    user: '***',
+    password: '***',
+    server: '***',
+    database: '***',
 }
 
 exports.getUser = async () => {
@@ -15,7 +15,7 @@ exports.getUser = async () => {
     {
         let pool = await new sql.ConnectionPool(config).connect();
 
-        result = await pool.request().query(' SELECT TOP 1000 [id] ,[name] FROM [pal].[dbo].[brand]');
+        result = await pool.request().query(' SELECT TOP 1000 [id] ,[name] FROM [brand]');
        
     } catch(err) {
 

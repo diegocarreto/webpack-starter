@@ -1,0 +1,70 @@
+lista los contenedores que estan corriendp
+	docker ps 
+
+lista los contenedores que estan corriendo y los que estan detenidos	
+	docker ps -a    
+
+listar imagenes docker
+	docker images
+	
+descarga una imagen del repositorio y mapea el puerto exterior 8100 con el interior 80
+	docker run -d -p 8100:80 ingjavierr/nginx-angular6   
+
+ip de docker en windows 7 con docker tool box
+	http://192.168.99.100:8100/
+	
+Descargar y configurar una imagen en docker con apache
+	docker run -it -p “8090:80” ubuntu bin/bash   --Descarga la imagen y mapea puertos
+	apt-get update -y							  --Descarga e instala actualizaciones
+	apt-get install -y apache2 apache2-utils      --Descarga e instala apache
+	apt-get install -y vim                        --Descarga e instala vim
+
+	/usr/sbin/apache2ctl start                    --Ejecuta apache
+	vi /var/www/html/hola.html                    --Crea y abre el archivo
+	
+	Archivo a crear en vim
+	<html>
+	 <head> 
+	  <title>Axity</title>
+	 </head>
+	 <body>
+	  <h1>Hello World</h1>
+	 </body> 
+	</html>
+	
+Ejemplo de archivo DockerFile (ubuntu con apache)
+	Archivo dockerfile
+		FROM ubuntu
+		RUN apt-get update -y && apt-get install -y apache2 apache2-utils
+		COPY hola.html /var/www/html/hola.html
+		CMD /usr/sbin/apache2ctl -D FOREGROUND
+	
+	Crear la imagen en la ruta donde esta el archivo dockerfile
+		docker build -t hola .
+		
+	Crear e iniciar el contenedor 
+		docker run -d -p 8090:80 hola
+		
+Abrir el contenido de un contenedor
+	docker exec -it [containerid] bin/bash
+	
+Parar un contenedor
+	docker stop [containerid]
+	
+Eliminar un contenedor
+	docker rm [containerid]
+	
+Parar y eliminar un contenedor
+	docker rm -f [containerid]
+
+Parar y eliminar todos los contenedores 
+	docker rm -f $(docker ps -aq)
+	
+Eliminar una imagen
+	docker rmi $(docker images -q)
+	
+Descargar imagen con sql server express
+    docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=AxitySotelo2019' -e 'MSSQL_PID=Express' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+	
+Descargar imagen con mongo
+	docker run --name cursonode -p 27017:27017 -d mongo
